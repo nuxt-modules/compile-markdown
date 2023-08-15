@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "nuxt-compile-markdown-playground",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate"
+  },
+  "devDependencies": {
+    "@nuxt/webpack-builder": "^3.6.5",
+    "nuxt": "latest"
+  }
+}
