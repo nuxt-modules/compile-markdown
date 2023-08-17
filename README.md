@@ -9,7 +9,7 @@ Nuxt Module to compile markdown files into Vue SFC at **build time**. This enabl
 
 - 📚 Write pages & components in Markdown
 - 💚 Use Vue components in Markdown.
-- 
+- 👌 Support SEO & Page metas
 
 ## Install
 
@@ -36,9 +36,7 @@ export default defineNuxtConfig({
 })
 ```
 
-## Usage
-
-Create your components or pages as Markdown:
+3. Create your components or pages as Markdown ✨
 
 ```bash
 components/
@@ -49,7 +47,6 @@ pages/
 ```
 
 ## SEO & Page metas
-
 
 Use the `seo` property in the frontmatter to leverage [`useSeoMeta()`](https://nuxt.com/docs/api/composables/use-seo-meta):
 
