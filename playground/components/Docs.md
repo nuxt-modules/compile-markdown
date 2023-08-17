@@ -1,3 +1,3 @@
 ### Markdown as Component
 
-This is a components the wrote as markdown
+This is a components written as markdown.

@@ -77,6 +77,10 @@ export default defineNuxtModule<ModuleOptions>({
       )
     }
 
+    options.wrapperClasses = options.wrapperClasses || ''
+    // Force disabling head (leveraging `seo` key)
+    options.headEnabled = false
+
     addVitePlugin(() => Markdown.vite(options))
     addWebpackPlugin(() => Markdown.webpack(options))
   },
