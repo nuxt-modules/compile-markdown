@@ -6,7 +6,7 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-Nuxt Module to compile markdown files into Vue SFC at build time.
+Nuxt Module to compile markdown files into Vue SFC at **build time**. This enables you to put `.md` files into your `pages` directory as standalone pages, and `.md` under `components` directory as Vue components. With components auto-import built-in in Nuxt, you can also use any components in your markdown files.
 
 ## Install
 
@@ -33,33 +33,11 @@ export default defineNuxtConfig({
 })
 ```
 
-That's it! You can now use My Module in your Nuxt app ✨
+## FAQ
 
-## Development
+### How does this compare to [@nuxt/content](https://content.nuxtjs.org/)?
 
-```bash
-# Install dependencies
-npm install
 
-# Generate type stubs
-npm run dev:prepare
-
-# Develop with the playground
-npm run dev
-
-# Build the playground
-npm run dev:build
-
-# Run ESLint
-npm run lint
-
-# Run Vitest
-npm run test
-npm run test:watch
-
-# Release new version
-npm run release
-```
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/nuxt-compile-markdown/latest.svg?style=flat&colorA=18181B&colorB=28CF8D

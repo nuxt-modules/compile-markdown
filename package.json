@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.6.5",
-    "unplugin-vue-markdown": "^0.24.1"
+    "unplugin-vue-markdown": "^0.24.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.40.2",
@@ -42,6 +42,6 @@
     "changelogen": "^0.5.4",
     "eslint": "^8.47.0",
     "nuxt": "^3.6.5",
-    "vitest": "^0.34.1"
+    "vitest": "^0.34.2"
   }
 }

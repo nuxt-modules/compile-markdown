@@ -1,3 +1,7 @@
+---
+title: Home!
+---
+
 # Hello
 
 Nuxt Page as Markdown

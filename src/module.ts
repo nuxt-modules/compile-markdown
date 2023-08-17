@@ -1,8 +1,8 @@
 import { addVitePlugin, addWebpackPlugin, defineNuxtModule } from '@nuxt/kit'
-import type { Options } from 'unplugin-vue-markdown/types'
+import type { Options as MarkdownOptions } from 'unplugin-vue-markdown/types'
 import Markdown from 'unplugin-vue-markdown'
 
-export interface ModuleOptions extends Options { }
+export interface ModuleOptions extends MarkdownOptions { }
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -51,37 +51,57 @@ export default defineNuxtModule<ModuleOptions>({
         nuxt.options.vite.vue.include.push(reEndingOrQuery)
     }
 
-    options.include = [reEndingOrQuery]
     const originalMarkdownItSetup = options.markdownItSetup
-    options.markdownItSetup = async (md) => {
-      await originalMarkdownItSetup?.(md)
+    const resolvedOptions: MarkdownOptions = {
+      wrapperClasses: '',
+      ...options,
+      include: [reEndingOrQuery],
+      headEnabled: false,
+      async markdownItSetup(md) {
+        await originalMarkdownItSetup?.(md)
 
-      // Replace <a> with <NuxtLink>
-      md.core.ruler.push(
-        'NuxtLink',
-        (state) => {
-          type Token = (typeof state.tokens)[0]
-          function visit(token: Token) {
-            if (token.tag === 'a') {
-              token.tag = 'NuxtLink'
-              // Replace `href` with `to`
-              const hrefTag = token.attrs?.find(([name]) => name === 'href')
-              if (hrefTag)
-                hrefTag[0] = 'to'
+        // Replace <a> with <NuxtLink>
+        md.core.ruler.push(
+          'NuxtLink',
+          (state) => {
+            type Token = (typeof state.tokens)[0]
+            function visit(token: Token) {
+              if (token.tag === 'a') {
+                token.tag = 'NuxtLink'
+                // Replace `href` with `to`
+                const hrefTag = token.attrs?.find(([name]) => name === 'href')
+                if (hrefTag)
+                  hrefTag[0] = 'to'
+              }
+              token.children?.forEach(visit)
             }
-            token.children?.forEach(visit)
+
+            state.tokens.forEach(visit)
+          },
+        )
+      },
+
+      transforms: {
+        extraScripts(frontmatter) {
+          const scripts: string[] = []
+
+          if (frontmatter.meta)
+            scripts.push(`definePageMeta(${JSON.stringify(frontmatter.meta)})`)
+
+          if (frontmatter.seo || frontmatter.title || frontmatter.description) {
+            scripts.push(`useSeoMeta(${JSON.stringify({
+              ...frontmatter.title ? { title: frontmatter.title } : {},
+              ...frontmatter.description ? { description: frontmatter.description } : {},
+              ...frontmatter.seo,
+            })})`)
           }
 
-          state.tokens.forEach(visit)
+          return scripts
         },
-      )
+      },
     }
 
-    options.wrapperClasses = options.wrapperClasses || ''
-    // Force disabling head (leveraging `seo` key)
-    options.headEnabled = false
-
-    addVitePlugin(() => Markdown.vite(options))
-    addWebpackPlugin(() => Markdown.webpack(options))
+    addVitePlugin(() => Markdown.vite(resolvedOptions))
+    addWebpackPlugin(() => Markdown.webpack(resolvedOptions))
   },
 })
