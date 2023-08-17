@@ -9,6 +9,8 @@ Nuxt Page as Markdown
 - Go to [/blog](/blog)
 - Go to [/about](/about)
 - Go to [/dynamic/hello](/dynamic/hello)
+- Go to [/readme](/readme)
+- Go to [/redirect](/redirect)
 
 ---
 

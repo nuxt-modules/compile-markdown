@@ -1,0 +1,4 @@
+---
+meta:
+  redirect: /about
+---
