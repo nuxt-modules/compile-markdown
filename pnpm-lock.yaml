@@ -42,6 +42,9 @@ importers:
       nuxt:
         specifier: ^3.6.5
         version: 3.6.5(@types/node@20.5.0)(eslint@8.47.0)(rollup@3.28.0)(typescript@5.1.6)
+      shikiji:
+        specifier: ^0.5.0
+        version: 0.5.0
       vitest:
         specifier: ^0.34.2
         version: 0.34.2
@@ -8148,6 +8151,10 @@ packages:
 
   /shell-quote@1.8.1:
     resolution: {integrity: sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==}
+    dev: true
+
+  /shikiji@0.5.0:
+    resolution: {integrity: sha512-3GEA5UapFEFwfwv97iA0uo63L89MX3G2CGKPmVxBGCa44sNtlCZJ1W+hajao2s526Eexxt25k9bC+DGBbNvJOA==}
     dev: true
 
   /siginfo@2.0.0:
