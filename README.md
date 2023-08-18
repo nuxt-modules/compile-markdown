@@ -149,6 +149,28 @@ import Readme from '../README.md'
 </template>
 ```
 
+## `<script>` and `<style>`
+
+Root-level `<script>` and `<style>` tags in Markdown files work just like they do in Vue SFCs, including `<script setup>`, `<style module>`, etc. The main difference here is that there is no `<template>` tag: all other root-level content is Markdown. Also note that all tags should be placed after the frontmatter:
+
+```md
+---
+hello: world
+---
+
+<script setup>
+const count = ref(0)
+</script>
+
+## Markdown Content
+
+The count is: {{ count }}
+
+<button @click="count++">Increment</button>
+```
+
+**Avoid `<style scoped>` in Markdown:** When used in Markdown, `<style scoped>` requires adding special attributes to every element on the current page, which will significantly bloat the page size. <style module> is preferred when locally-scoped styling is needed in a page.
+
 ## FAQ
 
 ### How does this compare to [@nuxt/content](https://content.nuxtjs.org/)?
