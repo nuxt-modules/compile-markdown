@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "packageManager": "pnpm@8.6.12",
   "description": "My new Nuxt module",
-  "repository": "your-org/nuxt-compile-markdown",
+  "repository": "nuxt-modules/compile-markdown",
   "license": "MIT",
   "type": "module",
   "exports": {

@@ -6,3 +6,9 @@ meta:
 # About page
 
 Go back [home](/)
+
+<Alert>
+
+**Hello** World!
+
+</Alert>
