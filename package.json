@@ -1,11 +1,11 @@
 {
   "name": "nuxt-compile-markdown",
+  "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@8.6.12",
   "description": "My new Nuxt module",
-  "repository": "nuxt-modules/compile-markdown",
   "license": "MIT",
-  "type": "module",
+  "repository": "nuxt-modules/compile-markdown",
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
