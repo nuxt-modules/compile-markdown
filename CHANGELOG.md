@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.2
+
+[compare changes](https://github.com/nuxt-modules/compile-markdown/compare/v0.0.1...v0.0.2)
+
+### 🚀 Enhancements
+
+- Builtin mdc and shiki ([b80f43a](https://github.com/nuxt-modules/compile-markdown/commit/b80f43a))
+
+### 🏡 Chore
+
+- Update deps ([2bb3a89](https://github.com/nuxt-modules/compile-markdown/commit/2bb3a89))
+- Update description ([21e40c4](https://github.com/nuxt-modules/compile-markdown/commit/21e40c4))
+
+### ❤️ Contributors
+
+- Anthony Fu <anthonyfu117@hotmail.com>
+
 ## v0.0.1
 
 
