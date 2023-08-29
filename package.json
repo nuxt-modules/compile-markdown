@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@8.7.0",
-  "description": "My new Nuxt module",
+  "description": "Nuxt Module to compile markdown files into Vue SFC at build time.",
   "license": "MIT",
   "repository": "nuxt-modules/compile-markdown",
   "exports": {
