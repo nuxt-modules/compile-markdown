@@ -2,7 +2,7 @@
 title: Home!
 ---
 
-# Hello
+# Hello{style="color:skyblue"}
 
 Nuxt Page as Markdown
 
@@ -15,7 +15,9 @@ Nuxt Page as Markdown
 
 <Counter />
 
-<Docs />
+::docs
+Slot content
+::
 
 ---
 

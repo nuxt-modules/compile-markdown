@@ -1,8 +1,34 @@
 import { addVitePlugin, addWebpackPlugin, defineNuxtModule } from '@nuxt/kit'
 import type { Options as MarkdownOptions } from 'unplugin-vue-markdown/types'
 import Markdown from 'unplugin-vue-markdown'
+import type { MarkdownItShikijiOptions } from 'markdown-it-shikiji'
+import markdownItMdc from 'markdown-it-mdc'
 
-export interface ModuleOptions extends MarkdownOptions { }
+export interface ModuleOptions {
+  /**
+   * Enable MDC (Markdown Components) support
+   *
+   * @experimental
+   * @see https://github.com/antfu/markdown-it-mdc
+   * @default true
+   */
+  mdc?: boolean
+
+  /**
+   * Enable Shiki (Syntax Highlighting) support
+   *
+   * @see https://github.com/shikijs/shiki
+   * @see https://github.com/antfu/shikiji - this plugin uses shikiji, a esm build of shiki
+   *
+   * @default { themes: { dark: 'vitesse-dark', light: 'vitesse-light' } } }
+   */
+  shiki?: boolean | MarkdownItShikijiOptions
+
+  /**
+   * Custom markdown-it setup
+   */
+  markdownItSetup?: MarkdownOptions['markdownItSetup']
+}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -51,14 +77,18 @@ export default defineNuxtModule<ModuleOptions>({
         nuxt.options.vite.vue.include.push(reEndingOrQuery)
     }
 
-    const originalMarkdownItSetup = options.markdownItSetup
+    const {
+      mdc = true,
+      markdownItSetup,
+      shiki = true,
+    } = options
+
     const resolvedOptions: MarkdownOptions = {
       wrapperClasses: '',
-      ...options,
       include: [reEndingOrQuery],
       headEnabled: false,
       async markdownItSetup(md) {
-        await originalMarkdownItSetup?.(md)
+        await markdownItSetup?.(md)
 
         // Replace <a> with <NuxtLink>
         md.core.ruler.push(
@@ -75,10 +105,26 @@ export default defineNuxtModule<ModuleOptions>({
               }
               token.children?.forEach(visit)
             }
-
             state.tokens.forEach(visit)
           },
         )
+
+        if (mdc)
+          md.use(markdownItMdc)
+
+        if (shiki) {
+          md.use(await import('markdown-it-shikiji')
+            .then(r => r.default(
+              shiki === true
+                ? {
+                    themes: {
+                      dark: 'vitesse-dark',
+                      light: 'vitesse-light',
+                    },
+                  }
+                : shiki,
+            )))
+        }
       },
 
       transforms: {
