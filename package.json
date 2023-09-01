@@ -2,7 +2,7 @@
   "name": "nuxt-compile-markdown",
   "type": "module",
   "version": "0.0.2",
-  "packageManager": "pnpm@8.7.0",
+  "packageManager": "pnpm@8.7.1",
   "description": "Nuxt Module to compile markdown files into Vue SFC at build time.",
   "license": "MIT",
   "repository": "nuxt-modules/compile-markdown",
@@ -31,15 +31,15 @@
   "dependencies": {
     "@nuxt/kit": "^3.7.0",
     "markdown-it": "^13.0.1",
-    "markdown-it-mdc": "0.0.4",
-    "markdown-it-shikiji": "^0.6.3",
-    "shikiji": "^0.6.3",
+    "markdown-it-mdc": "^0.1.0",
+    "markdown-it-shikiji": "^0.6.6",
+    "shikiji": "^0.6.6",
     "unplugin-vue-markdown": "^0.24.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.41.0",
     "@nuxt/devtools": "latest",
-    "@nuxt/module-builder": "^0.4.0",
+    "@nuxt/module-builder": "^0.5.1",
     "@nuxt/schema": "^3.7.0",
     "@nuxt/test-utils": "^3.7.0",
     "@types/node": "^20.5.7",
