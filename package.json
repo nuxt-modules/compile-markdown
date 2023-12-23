@@ -2,7 +2,7 @@
   "name": "nuxt-compile-markdown",
   "type": "module",
   "version": "0.0.3",
-  "packageManager": "pnpm@8.7.1",
+  "packageManager": "pnpm@8.12.1",
   "description": "Nuxt Module to compile markdown files into Vue SFC at build time.",
   "license": "MIT",
   "repository": "nuxt-modules/compile-markdown",
@@ -29,23 +29,23 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.7.0",
-    "markdown-it": "^13.0.1",
-    "markdown-it-mdc": "^0.1.0",
-    "markdown-it-shikiji": "^0.6.6",
-    "shikiji": "^0.6.6",
-    "unplugin-vue-markdown": "^0.24.3"
+    "@nuxt/kit": "^3.8.2",
+    "markdown-it": "^14.0.0",
+    "markdown-it-mdc": "^0.2.1",
+    "markdown-it-shikiji": "^0.9.11",
+    "shikiji": "^0.9.11",
+    "unplugin-vue-markdown": "^0.25.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.41.0",
+    "@antfu/eslint-config": "^2.4.6",
     "@nuxt/devtools": "latest",
-    "@nuxt/module-builder": "^0.5.1",
-    "@nuxt/schema": "^3.7.0",
-    "@nuxt/test-utils": "^3.7.0",
-    "@types/node": "^20.5.7",
+    "@nuxt/module-builder": "^0.5.4",
+    "@nuxt/schema": "^3.8.2",
+    "@nuxt/test-utils": "3.7.0",
+    "@types/node": "^20.10.5",
     "changelogen": "^0.5.5",
-    "eslint": "^8.48.0",
-    "nuxt": "^3.7.0",
-    "vitest": "^0.34.3"
+    "eslint": "^8.56.0",
+    "nuxt": "^3.8.2",
+    "vitest": "^1.1.0"
   }
 }
