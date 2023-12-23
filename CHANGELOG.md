@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/nuxt-modules/compile-markdown/compare/v0.0.3...v0.0.4)
+
+### 🏡 Chore
+
+- Update deps ([bd2e8a6](https://github.com/nuxt-modules/compile-markdown/commit/bd2e8a6))
+
+### ❤️ Contributors
+
+- Anthony Fu <anthonyfu117@hotmail.com>
+
 ## v0.0.3
 
 [compare changes](https://github.com/nuxt-modules/compile-markdown/compare/v0.0.1...v0.0.3)
