@@ -163,7 +163,7 @@ import Readme from '../README.md'
 
 ## Syntax Highlighting
 
-We have [`shiki`](https://github.com/shikijs/shiki) built-in for syntax highlighting (actually uses [`shikiji`](https://github.com/antfu/shikiji), a ESM build of `shiki`). It's enabled by default and supports light/dark mode out of the box.
+We have [`shiki`](https://github.com/shikijs/shiki) built-in for syntax highlighting. It's enabled by default and supports light/dark mode out of the box.
 
 To apply the dark mode theme, you will need to add a bit of CSS:
 
@@ -189,7 +189,7 @@ html.dark .shiki span {
 }
 ```
 
-You can learn more about the [Dual Themes suppport](https://github.com/antfu/shikiji#lightdark-dual-themes).
+You can learn more about the [Dual Themes support](https://shiki.style/guide/dual-themes).
 
 ## `<script>` and `<style>`
 
