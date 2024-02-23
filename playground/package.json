@@ -8,7 +8,7 @@
     "generate": "nuxi generate"
   },
   "devDependencies": {
-    "@nuxt/webpack-builder": "^3.8.2",
+    "@nuxt/webpack-builder": "^3.10.3",
     "nuxt": "latest"
   }
 }

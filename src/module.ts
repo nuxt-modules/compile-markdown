@@ -1,7 +1,7 @@
 import { addVitePlugin, addWebpackPlugin, defineNuxtModule } from '@nuxt/kit'
 import type { Options as MarkdownOptions } from 'unplugin-vue-markdown/types'
 import Markdown from 'unplugin-vue-markdown'
-import type { MarkdownItShikijiOptions } from 'markdown-it-shikiji'
+import type { MarkdownItShikiOptions } from '@shikijs/markdown-it'
 import markdownItMdc from 'markdown-it-mdc'
 
 export interface ModuleOptions {
@@ -18,11 +18,10 @@ export interface ModuleOptions {
    * Enable Shiki (Syntax Highlighting) support
    *
    * @see https://github.com/shikijs/shiki
-   * @see https://github.com/antfu/shikiji - this plugin uses shikiji, a esm build of shiki
    *
    * @default { themes: { dark: 'vitesse-dark', light: 'vitesse-light' } } }
    */
-  shiki?: boolean | MarkdownItShikijiOptions
+  shiki?: boolean | MarkdownItShikiOptions
 
   /**
    * Custom markdown-it setup
@@ -113,7 +112,7 @@ export default defineNuxtModule<ModuleOptions>({
           md.use(markdownItMdc)
 
         if (shiki) {
-          md.use(await import('markdown-it-shikiji')
+          md.use(await import('@shikijs/markdown-it')
             .then(r => r.default(
               shiki === true
                 ? {
