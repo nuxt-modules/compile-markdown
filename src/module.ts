@@ -1,8 +1,8 @@
-import { addVitePlugin, addWebpackPlugin, defineNuxtModule } from '@nuxt/kit'
-import type { Options as MarkdownOptions } from 'unplugin-vue-markdown/types'
-import Markdown from 'unplugin-vue-markdown'
 import type { MarkdownItShikiOptions } from '@shikijs/markdown-it'
+import type { Options as MarkdownOptions } from 'unplugin-vue-markdown/types'
+import { addVitePlugin, addWebpackPlugin, defineNuxtModule } from '@nuxt/kit'
 import markdownItMdc from 'markdown-it-mdc'
+import Markdown from 'unplugin-vue-markdown'
 
 export interface ModuleOptions {
   /**
