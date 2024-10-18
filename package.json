@@ -20,6 +20,7 @@
   ],
   "scripts": {
     "prepack": "nuxt-module-build",
+    "build": "nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
@@ -46,6 +47,7 @@
     "changelogen": "^0.5.7",
     "eslint": "^9.11.1",
     "nuxt": "^3.13.2",
-    "vitest": "^2.1.2"
+    "vitest": "^2.1.2",
+    "vue-tsc": "^2.1.6"
   }
 }
